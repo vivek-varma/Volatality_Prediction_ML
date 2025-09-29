@@ -66,3 +66,16 @@ Best single model: LightGBM (re-labeled) with train-fixed cuts and careful prepr
 Material lift in HIGH recall vs. original labels; balanced accuracy stable.
 
 Deep model (TCN) underperforms with limited daily data (expected); shines with richer intraday inputs.
+
+BEST MODEL STATS:
+y_val_pred,  y_val_proba  = predict_with_high_boost(lgbm, X_val,  use_boost=True)
+y_test_pred, y_test_proba = predict_with_high_boost(lgbm, X_test, use_boost=True)
+
+report_split("VALIDATION (boosted)", y_val, y_val_pred, y_val_proba)
+report_split("TEST (boosted)",       y_test, y_test_pred, y_test_proba)
+
+# Also show pure argmax (no boost) for comparison
+y_val_pred_arg,  y_val_proba_arg  = predict_with_high_boost(lgbm, X_val,  use_boost=False)
+y_test_pred_arg, y_test_proba_arg = predict_with_high_boost(lgbm, X_test, use_boost=False)
+report_split("VALIDATION (argmax)", y_val, y_val_pred_arg, y_val_proba_arg)
+report_split("TEST (argmax)",       y_test, y_test_pred_arg, y_test_proba_arg)
