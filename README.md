@@ -68,6 +68,7 @@ Material lift in HIGH recall vs. original labels; balanced accuracy stable.
 Deep model (TCN) underperforms with limited daily data (expected); shines with richer intraday inputs.
 
 BEST MODEL STATS:
+
 <img width="612" height="458" alt="image" src="https://github.com/user-attachments/assets/9e0d999e-4a67-4aec-b0cf-37864334e4e5" />
 <img width="621" height="453" alt="image" src="https://github.com/user-attachments/assets/7fda1228-cb30-47bb-826d-b6dd8388c555" />
 
